@@ -38,15 +38,12 @@ jobs:
           
       - name: Copy softlink files
         run: |
-          mv ./_layouts ./_layouts_backup
-          mv ./_includes ./_includes_backup
-          mv ./assets ./assets_backup
           mkdir ./assets
           mkdir ./_includes
           mkdir ./_layouts
-          cp -r ./assets_backup/* ./assets/
-          cp -r ./_includes_backup/* ./_includes/
-          cp -r ./_layouts_backup/* ./_layouts/
+          cp -r ./Project-Zero/assets/* ./assets/
+          cp -r ./Project-Zero/_includes/* ./_includes/
+          cp -r ./Project-Zero/_layouts/* ./_layouts/
           ls
           
       - name: Build the site in the jekyll/builder container
